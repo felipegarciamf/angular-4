@@ -9,7 +9,7 @@ import { PhotosListComponent } from './photos/photos-list/photos-list.component'
 
 const routes: Routes = [
     {
-        path: 'user',
+        path: 'user/:userName',
         component: PhotosListComponent,
     },
     {

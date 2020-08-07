@@ -1,15 +1,16 @@
+import { PhotoModel } from './../../model/photo-model';
 import { PhotosProviderService } from './../../photos-provider.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-photos-list',
+  selector: 'ap-photos-list',
   templateUrl: './photos-list.component.html',
   styleUrls: ['./photos-list.component.css']
 })
 export class PhotosListComponent implements OnInit {
 
-  public photos = [];
+  public photos: PhotoModel[] = [];
 
   constructor(private photoProvider: PhotosProviderService,
               private activatedRoute: ActivatedRoute) {

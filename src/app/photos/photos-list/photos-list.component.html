@@ -11,8 +11,8 @@
     </form>
 
 </div>
-{{ filter }}
-<ap-photos [photos]="photos">
+
+<ap-photos [photos]="photos | filterByDescription: filter">
 
 
 </ap-photos>

@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PhotosListComponent implements OnInit {
 
   public photos: PhotoModel[] = [];
+  public filter: string = '';
 
   constructor(private photoProvider: PhotosProviderService,
               private activatedRoute: ActivatedRoute) {
@@ -21,7 +22,7 @@ export class PhotosListComponent implements OnInit {
   }
 
   populaFoto() {
-
+    
     const userName = this.activatedRoute.snapshot.params.userName;
 
     this.photoProvider

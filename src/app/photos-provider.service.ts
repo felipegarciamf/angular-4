@@ -14,8 +14,6 @@ export class PhotosProviderService {
 
   }
 
-
-
   listFromUser(userName: string){
     return this.http.get<PhotoModel[]>(this.url + userName + "/photos")
   }

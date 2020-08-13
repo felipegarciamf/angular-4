@@ -13,25 +13,11 @@ export class PhotosListComponent implements OnInit {
   public photos: PhotoModel[] = [];
   public filter: string = '';
 
-  constructor(private photoProvider: PhotosProviderService,
-              private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.populaFoto();
-  }
-
-  populaFoto() {
-    
-    const userName = this.activatedRoute.snapshot.params.userName;
-
-    this.photoProvider
-    .listFromUser(userName)
-    .subscribe((resp)=> {
-      this.photos = resp;
-    }, (err) => {
-      console.log("nao trouxe nada" + err);
-    })
+    this.photos = this.activatedRoute.snapshot.data['photos'];
   }
 
 }

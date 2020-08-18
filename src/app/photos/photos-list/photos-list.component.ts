@@ -1,3 +1,4 @@
+import { PhotosProviderService } from './../../photos-provider.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
@@ -16,12 +17,19 @@ export class PhotosListComponent implements OnInit, OnDestroy {
   public photos: PhotoModel[] = [];
   public filter: string = '';
   debounce: Subject<string> = new Subject<string>();
+  hasMore: boolean = true;
+  currentPage: number = 1;
+  userName: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+        private activatedRoute: ActivatedRoute,
+        private photoService: PhotosProviderService
+    ) {
   }
 
 
-  ngOnInit() {
+  ngOnInit() : void {
+    this.userName = this.activatedRoute.snapshot.params.userName;
     this.photos = this.activatedRoute.snapshot.data['photos'];
     this.debounce
     .pipe(debounceTime(300))
@@ -30,6 +38,15 @@ export class PhotosListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.debounce.unsubscribe();
+  }
+
+  load(){
+    this.photoService
+      .listFromUserPaginated(this.userName, ++this.currentPage)
+      .subscribe(photos => { 
+        this.photos = this.photos.concat(photos);
+        if(!photos.length) this.hasMore = false;
+      });
   }
 
 

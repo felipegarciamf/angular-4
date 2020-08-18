@@ -1,5 +1,5 @@
 import { PhotoModel } from './model/photo-model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -21,4 +21,14 @@ export class PhotosProviderService {
   getPhotos() {
     return this.http.get<PhotoModel[]>(this.url + "/photos")
   }
+
+
+  listFromUserPaginated(userName: string, page: number){
+    const calopsita = new HttpParams()
+    .append('page', page.toString());
+
+    return this.http.get<PhotoModel[]>(this.url + userName + "/photos", { params: calopsita });
+  }
+
+
 }

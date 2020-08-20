@@ -1,16 +1,16 @@
-import { PhotosProviderService } from './../../photos-provider.service';
+import { PhotosProviderService } from '../../photos-provider.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
-import { PhotoModel } from './../../model/photo-model';
+import { PhotoModel } from '../../model/photo-model';
 
 
 @Component({
   selector: 'ap-photos-list',
-  templateUrl: './photos-list.component.html',
-  styleUrls: ['./photos-list.component.css']
+  templateUrl: './photo-list.component.html',
+  styleUrls: ['./photo-list.component.css']
 })
 export class PhotosListComponent implements OnInit, OnDestroy {
 

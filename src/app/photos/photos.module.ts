@@ -1,16 +1,16 @@
-import { FilterByDescription } from './photo-list/filter-by-description.pipe';
+import { PhotosComponent } from './photo-list/photos/photos.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { PhotoComponent } from "./photo/photo.component";
+import { PhotosListComponent } from "./photo-list/photo-list.component";
+import { PhotosFormComponent } from "./photo-form/photos-form.component";
+import { FilterByDescription } from "./photo-list/filter-by-description.pipe";
+import { LoadButtonComponent } from "./photo-list/load-button/load-button.component";
+
+import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 
-import { PhotoComponent } from './photo/photo.component';
-import { PhotosListComponent } from './photos-list/photos-list.component';
-import { PhotosFormComponent } from './photos-form/photos-form.component';
-import { PhotosComponent } from './photo-list/photos/photos.component';
-import { LoadButtonComponent } from './photo-list/load-button/load-button.component';
-
 @NgModule({
-    declarations: [ 
+    declarations : [
         PhotoComponent, 
         PhotosListComponent, 
         PhotosFormComponent, 
@@ -18,9 +18,11 @@ import { LoadButtonComponent } from './photo-list/load-button/load-button.compon
         FilterByDescription,
         LoadButtonComponent
     ],
-    imports: [ 
+    imports: [
         HttpClientModule,
         CommonModule
     ]
 })
-export class PhotosModule {}
+export class PhotosModule {
+
+}

@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 
-import { PhotosFormComponent } from './photos/photos-form/photos-form.component';
-import { PhotosListComponent } from './photos/photos-list/photos-list.component';
+import { PhotosFormComponent } from './photos/photo-form/photos-form.component';
+import { PhotosListComponent } from './photos/photo-list/photo-list.component';
 
 const routes: Routes = [
     {

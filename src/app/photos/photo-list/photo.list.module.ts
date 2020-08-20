@@ -6,15 +6,23 @@ import { NgModule } from '@angular/core';
 import { PhotosListComponent } from './photo-list.component';
 import { PhotoModule } from '../photo/photo.module';
 @NgModule({
+
+    // declaração de components que existem no modulo fazendo binding entre eles
     declarations: [
         PhotosListComponent,
         PhotosComponent,
         LoadButtonComponent,
         FilterByDescription
     ],
+    // importando modulos que serão usados dentro dos declarations
     imports: [
         CommonModule,
         PhotoModule
+    ],
+
+    // exporta todos os components, caso alguem puxe o módulo
+    exports : [
+
     ]
 })
 export class PhotoListModule  {

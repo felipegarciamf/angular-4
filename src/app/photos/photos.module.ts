@@ -1,3 +1,4 @@
+
 import { PhotosComponent } from './photo-list/photos/photos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PhotoComponent } from "./photo/photo.component";
@@ -8,6 +9,7 @@ import { LoadButtonComponent } from "./photo-list/load-button/load-button.compon
 
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { CardModule } from '../shared/components/card/card/card.module';
 
 @NgModule({
     declarations : [
@@ -20,7 +22,8 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         HttpClientModule,
-        CommonModule
+        CommonModule,
+        CardModule
     ]
 })
 export class PhotosModule {

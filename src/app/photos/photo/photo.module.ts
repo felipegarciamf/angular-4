@@ -1,11 +1,13 @@
 
 import { NgModule } from "@angular/core";
 import { PhotoComponent } from "./photo.component";
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
     declarations: [
-        PhotoComponent
+        PhotoComponent,
+        CardComponent
     ],
     exports: [
         PhotoComponent

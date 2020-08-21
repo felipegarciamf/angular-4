@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -7,13 +7,16 @@ import { debounceTime } from 'rxjs/operators';
     selector: 'ap-search',
     templateUrl: './search.component.html'
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit, OnDestroy {
 
-    
     ngOnInit(): void {
         this.debounce
-        .pipe(debounceTime(300))
-        .subscribe(filter => this.filter = filter);
+            .pipe(debounceTime(300));
+    }
+
+
+    ngOnDestroy(): void {
+        this.debounce.unsubscribe();
     }
 
 

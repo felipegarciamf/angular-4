@@ -10,6 +10,7 @@ import { LoadButtonComponent } from "./photo-list/load-button/load-button.compon
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { CardModule } from '../shared/components/card/card/card.module';
+import { SearchComponent } from './photo-list/search/search.component';
 
 @NgModule({
     declarations : [
@@ -18,7 +19,8 @@ import { CardModule } from '../shared/components/card/card/card.module';
         PhotosFormComponent, 
         PhotosComponent,
         FilterByDescription,
-        LoadButtonComponent
+        LoadButtonComponent,
+        SearchComponent
     ],
     imports: [
         HttpClientModule,

@@ -19,7 +19,8 @@ import { CardModule } from '../../shared/components/card/card/card.module';
         PhotosListComponent,
         PhotosComponent,
         LoadButtonComponent,
-        FilterByDescription
+        FilterByDescription,
+        SearchComponent
     ],
     // importando modulos que serão usados dentro dos declarations
     imports: [

@@ -1,7 +1,8 @@
 
 import { NgModule } from "@angular/core";
 import { PhotoComponent } from "./photo.component";
-import { CardComponent } from './card/card.component';
+import { CardComponent } from "src/app/shared/components/card/card/card.component";
+
 
 
 @NgModule({

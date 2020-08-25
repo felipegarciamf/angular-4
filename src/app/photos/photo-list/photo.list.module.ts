@@ -8,6 +8,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { PhotosListComponent } from './photo-list.component';
 import { PhotoModule } from '../photo/photo.module';
 import { CardModule } from '../../shared/components/card/card/card.module';
+import { DarkenOnHoverModule } from 'src/app/shared/directives/darken-on-hover/darken-on-hover.module';
 
 
 
@@ -26,7 +27,8 @@ import { CardModule } from '../../shared/components/card/card/card.module';
     imports: [
         CommonModule,
         PhotoModule,
-        CardModule
+        CardModule,
+        DarkenOnHoverModule
     ],
     // exporta todos os components, caso alguem puxe o módulo
     exports : [

@@ -25,7 +25,8 @@ import { CardModule } from '../../shared/components/card/card/card.module';
     // importando modulos que serão usados dentro dos declarations
     imports: [
         CommonModule,
-        PhotoModule
+        PhotoModule,
+        CardModule
     ],
     // exporta todos os components, caso alguem puxe o módulo
     exports : [
